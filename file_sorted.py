@@ -1,4 +1,6 @@
 import csv
+from collections import Counter
+
 
 class File_sort:
     def __init__(self, collumn):
@@ -17,6 +19,8 @@ class File_sort:
             for k in range(0,len(lis)-1 - i): #Начинаем проверку элементов
                 if lis[k] > lis[k+1]:  #В порядке убывания
                     lis[k], lis[k+1] = lis[k+1], lis[k] #Меняем элементы местами
+
+        lis = Counter(lis)
         return lis
 
 
